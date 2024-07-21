@@ -2,10 +2,10 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 def about_view(request):
-    return HttpResponse('<h1>About</h1>')
+    return render(request, 'website/about.html')
 
 def resume_view(request):
-    return HttpResponse('<h1>Resume</h1>')
+    return render(request, 'website/resume.html')
 
 def project_view(request):
-    return HttpResponse('<h1>Project</h1>')
+    return render(request, 'website/projects.html')
