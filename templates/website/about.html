@@ -1,16 +1,197 @@
+{% load static %}
+
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aida Roshani</title>
-</head>
-<body>
-    <h1>
-        About
-    </h1>
-    <p>
-        Hi, I am Aida Roshani
-    </p>
-</body>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+    <title>Aida Roshani - About Me</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="Aida Roshani Website" />
+    <meta name="keywords" content="vcard, resposnive, retina, resume, jquery, css3, bootstrap, portfolio" />
+    <meta name="author" content="lmpixels" />
+    
+
+    <link rel="stylesheet" href="{% static 'css/normalize.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
+
+    <script src="{%static 'js/modernizr.custom.js' %}"></script>
+    <script src="https://kit.fontawesome.com/e4236025ee.js" crossorigin="anonymous"></script>
+  </head>
+
+  <body class="page">
+
+    <div class="lm-animated-bg"></div>
+    
+    <!-- Loading animation -->
+    <div class="preloader">
+      <div class="preloader-animation">
+        <div class="preloader-spinner">
+        </div>
+      </div>
+    </div>
+    <!-- /Loading animation -->
+
+    <!-- Scroll To Top Button -->
+    <div class="lmpixels-scroll-to-top"><i class="lnr lnr-chevron-up"></i></div>
+    <!-- /Scroll To Top Button -->
+
+    <div class="page-scroll">
+      <div id="page_container" class="page-container bg-move-effect" data-animation="transition-flip-in-right">
+
+        <!-- Header -->
+        <header id="site_header" class="header">
+          <div class="header-content clearfix">
+                
+            <!-- Text Logo -->
+            <div class="text-logo">
+              <a href="{% url 'about' %}" class="btn btn-primary">Main Page</a>
+            </div>
+            <!-- /Text Logo -->
+
+            <!-- Navigation -->
+            <div class="site-nav mobile-menu-hide">
+              <ul class="leven-classic-menu site-main-menu">
+          
+                <li class="menu-item">
+                  <a href="{% url 'resume' %}">Resume</a>
+                </li>
+                
+                <li class="menu-item">
+                  <a href="{% url 'projects' %}">Projects</a>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <a class="menu-toggle mobile-visible">
+              <i class="fa fa-bars"></i>
+            </a>
+            <!-- Mobile Menu Toggle -->
+          </div>
+        </header>
+
+        <!-- /Header -->
+
+        <div id="main" class="site-main">
+          <div id="main-content" class="single-page-content">
+            <div id="primary" class="content-area">    
+              <div id="content" class="page-content site-content single-post" role="main">
+                <!-- Home Page Top Part -->
+                <div class="row flex-v-align">
+                        
+                  <div class="col-sm-12 col-md-5 col-lg-5">
+                    <div class="home-photo">
+                      <div class="hp-inner">
+                        <img src="{%static '/img/main_photo.jpg' %}" style="background-image">
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-sm-12 col-md-7 col-lg-7">
+                    <div class="home-text hp-left">
+                      <div class="owl-carousel text-rotation">                                    
+                        <div class="item">
+                          <h4>Backend Developer</h4>
+                        </div>
+
+                        <div class="item">
+                          <h4>Data Sceintist</h4>
+                        </div>
+                      </div>
+                        
+                      <h1>Aida Roshani</h1>
+                      <p style="text-align:justify;">As an Industrial Engineering graduate from the University of Tehran, I developed a keen
+                        interest in computer science. My involvement as a staff member in events (Gamein2021, Sharif
+                        University) and connections with tech teams during university, ignited my fascination with this
+                        dynamic field.
+                        My self-taught expertise in Python, SQL, and backend development techniques—including Git
+                        and data structure and algorithms—has equipped me with a solid foundation. Recently, I made
+                        the exciting decision to change my major to Computer Science after the university entrance
+                        exam. Now, my goal is to pursue a computer science career in academia, too.
+                        Known for my strong work ethic and unwavering commitment to continuous learning, I actively
+                        seek opportunities to apply and expand these skills in a challenging role.</p>
+                           
+                      <!-- <div class="home-buttons">
+                        <a href="#" target="_blank" class="btn btn-primary">Download CV</a>
+                      </div> -->
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class=" col-xs-12 col-sm-12">
+                    <div class="home-content">
+                    </div>
+                    
+                    <!--contact information-->
+                    <div class="row">
+                      <div class=" col-xs-12 col-sm-4 ">
+                        <div class="info-block-w-icon">
+                          <div class="ci-icon">
+                            <i class="fa-brands fa-linkedin"></i>
+                          </div>
+                          <div class="ci-text">
+                            <h4><a href="https://www.linkedin.com/in/aida-roshani-73b489181/">Linkedin</a></h4>
+                            <p>To checkout my Linkedin profile click here.</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class=" col-xs-12 col-sm-4 ">
+                        <div class="info-block-w-icon">
+                          <div class="github icon">
+                            <i class="fa-brands fa-github"></i>
+                          </div>
+                          <div class="ci-text">
+                            <h4><a href="https://github.com/Aaidaro">My Github Profile</a></h4>
+                            <p>Click the link above to visit my github profile and my projects code</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class=" col-xs-12 col-sm-4 ">
+                        <div class="info-block-w-icon">
+                          <div class="ci-icon">
+                            <i class="fa-solid fa-square-envelope"></i>
+                          </div>
+                          <div class="ci-text">
+                            <img src="{%static '/img/Email.png' %}" style="max-width:200px" >                           
+                            <p>If you want to get in touch with me, please use the Gmail address above.</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <!--contact information-->
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="site-footer clearfix">
+          <p></p>
+        </footer>
+        <!-- /Footer -->
+        
+      </div>
+    </div>
+
+    <script src="{% static 'js/jquery-2.1.3.min.js' %}"></script>
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+    <script src="{% static 'js/imagesloaded.pkgd.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/jquery.shuffle.min.js' %}"></script>
+    <script src="{% static 'js/masonry.pkgd.min.js' %}"></script>
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'js/jquery.googlemap.js' %}"></script>
+    <script src="{% static 'js/validator.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+  </body>
 </html>
