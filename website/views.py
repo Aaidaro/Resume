@@ -9,3 +9,6 @@ def resume_view(request):
 
 def project_view(request):
     return render(request, 'website/projects.html')
+
+def project_main_view(request):
+    return render(request, 'website/project_main.html')
