@@ -2,7 +2,7 @@
 {% block content %}
 {% load static %}
 
-<title>Aida Roshani - About </title>
+<title>{{name}} - About </title>
 <div id="main" class="site-main">
   <div id="main-content" class="single-page-content">
     <div id="primary" class="content-area">
@@ -22,20 +22,19 @@
             <div class="home-text hp-left">
               <div class="owl-carousel text-rotation">
                 <div class="item">
-                  <h4>Backend Developer</h4>
+                  <h4>{{job_title1}}</h4>
                 </div>
 
                 <div class="item">
-                  <h4>Data Sceintist</h4>
+                  <h4>{{job_title2}}</h4>
                 </div>
               </div>
 
-              <h1>Aida Roshani</h1>
+              <h1>{{name}}</h1>
               <p style="text-align:justify;">As an Industrial Engineering graduate from the University of Tehran, I
-                developed a keen
-                interest in computer science. My involvement as a staff member in events (Gamein2021, Sharif
-                University) and connections with tech teams during university, ignited my fascination with this
-                dynamic field.
+                developed a keeninterest in computer science. My involvement as a staff member in events 
+                (Gamein2021, Sharif University) and connections with tech teams during university, 
+                ignited my fascination with this dynamic field.
                 My self-taught expertise in Python, SQL, and backend development techniques—including Git
                 and data structure and algorithms—has equipped me with a solid foundation. Recently, I made
                 the exciting decision to change my major to Computer Science after the university entrance
@@ -62,7 +61,7 @@
                     <i class="fa-brands fa-linkedin"></i>
                   </div>
                   <div class="ci-text">
-                    <h4><a href="https://www.linkedin.com/in/aida-roshani-73b489181/">Linkedin</a></h4>
+                    <h4><a href="{{linkedin_link}}">Linkedin</a></h4>
                     <p>To checkout my Linkedin profile click here.</p>
                   </div>
                 </div>
@@ -73,7 +72,7 @@
                     <i class="fa-brands fa-github"></i>
                   </div>
                   <div class="ci-text">
-                    <h4><a href="https://github.com/Aaidaro">My Github Profile</a></h4>
+                    <h4><a href="{{github_link}}">My Github Profile</a></h4>
                     <p>Click the link above to visit my github profile and my projects code</p>
                   </div>
                 </div>
