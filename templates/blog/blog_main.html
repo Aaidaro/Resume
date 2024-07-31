@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+<title>Aida Roshani - Blog </title>
+<div id="main" class="site-main">
+  <div id="main-content" class="single-page-content">
+    <div id="primary" class="content-area">
+
+      <div class="page-title">
+        <h1>Blog</h1>
+        <div class="page-subtitle">
+            <h4> My Diary</h4>
+        </div>
+      </div>
+
+      <div id="content" class="page-content site-content single-post" role="main">
+
+        <div class="row">
+          <div class=" col-xs-12 col-sm-12 ">
+
+            <div class="blog-masonry three-columns clearfix">
+              <!-- Blog Post 1 -->
+              <div class="item">
+                <div class="blog-card">
+                  <div class="media-block">
+                    <div class="category">
+                      <a href="#" title="View all posts in WordPress">WordPress</a>
+                    </div>
+                    <a href="{% url 'blog:single' %}">
+                      <img src="{% static 'img/blog/blog_post_1.jpg' %}" alt="How to Make a WordPress Plugin Extensible" title="" />
+                      <div class="mask"></div>
+                    </a>
+                  </div>
+                  <div class="post-info">
+                    <div class="post-date">04 Dec 2019</div>
+                    <a href="blog-post-1.html">
+                      <h4 class="blog-item-title">How to Make a WordPress Plugin Extensible</h4>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- End of Blog Post 1 -->
+            </div>
+
+            <!-- <a class="btn btn-primary" href="#">See All Posts</a> -->
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
