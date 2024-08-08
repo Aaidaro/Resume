@@ -12,3 +12,8 @@ class Project(models.Model):
     created_date = models.DateTimeField(auto_now=True)
     updated_date = models.DateTimeField(auto_now=True)
 
+    class Meta:
+        ordering = ["created_date"]
+    
+    def __str__(self) -> str:
+        return f"{self.title} - {self.id}"
