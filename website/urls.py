@@ -7,5 +7,5 @@ urlpatterns = [
     path('', about_view, name= "about"),
     path('resume/', resume_view, name= "resume"),
     path('projects/', project_view, name= "projects"),
-    path('<int:pid>/', project_single_view, name= "project_main")
+    path('single/', project_single_view, name= "single project")
 ]

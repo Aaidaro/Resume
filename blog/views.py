@@ -3,7 +3,7 @@ from blog.models import Post
 from datetime import datetime
 
 def blog_main_view(request):
-    published_posts = Post.objects.filter(status=1, published_date__lte=datetime.now())
+    published_posts = Post.objects.filter(status= 1, published_date__lte= datetime.now())
     draft_posts = Post.objects.filter(status= 0)
     context = {'published_posts':published_posts, "draft_posts":draft_posts}
     return render(request, 'blog/blog_main.html', context)
