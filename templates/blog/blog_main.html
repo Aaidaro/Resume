@@ -17,27 +17,30 @@
           <div class=" col-xs-12 col-sm-12 ">
 
             <div class="blog-masonry three-columns clearfix">
+              {% for post in posts %}
               <!-- Blog Post 1 -->
               <div class="item">
                 <div class="blog-card">
                   <div class="media-block">
                     <div class="category">
-                      <a href="#" title="View all posts in WordPress">WordPress</a>
+                      <a href="#" title= "View all posts in {{post.tag}}">WordPress</a>
                     </div>
-                    <a href="{% url 'blog:single' %}">
+                    <a href=#>
                       <img src="{% static 'img/blog/blog_post_1.jpg' %}" alt="How to Make a WordPress Plugin Extensible" title="" />
                       <div class="mask"></div>
                     </a>
                   </div>
                   <div class="post-info">
-                    <div class="post-date">04 Dec 2019</div>
+                  <div class="post-date">{{post.published_date|date:"j M Y"}}</div>
                     <a href="blog-post-1.html">
-                      <h4 class="blog-item-title">How to Make a WordPress Plugin Extensible</h4>
+                      <h4 class="blog-item-title">{{post.title}}</h4>
                     </a>
+                    <div class="post-date">{{post.id}}</div>
                   </div>
                 </div>
               </div>
               <!-- End of Blog Post 1 -->
+              {% endfor %}
             </div>
 
             <!-- <a class="btn btn-primary" href="#">See All Posts</a> -->
