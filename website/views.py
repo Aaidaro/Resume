@@ -15,7 +15,7 @@ def resume_view(request):
 def project_view(request):
     return render(request, 'website/projects.html')
 
-def project_main_view(request):
+def project_single_view(request):
     context = {'developers_name': 'Aida Roshani',
                "project_link_github":"https://github.com/Aaidaro/Resume",
                "project_link_preview":"github.com/Aaidaro/Resume",
