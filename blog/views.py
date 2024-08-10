@@ -10,6 +10,8 @@ def blog_main_view(request):
 
 def single_blog_view(request, pid):
     post = get_object_or_404(Post, pk=pid)
+    post.counted_view += 1
+    post.save()
     context = {'post':post}
     return render(request, 'blog/blog_single.html', context)
 
