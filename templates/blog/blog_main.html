@@ -26,7 +26,7 @@
                       <a href="#" title= "View all posts in {{post.tag}}">WordPress</a>
                     </div>
                     <a href="{% url 'blog:single' pid=post.id%}">
-                      <img src="{% static 'img/blog/blog_post_1.jpg' %}" alt="How to Make a WordPress Plugin Extensible" title="" />
+                      <img src="{{post.image.url}}" alt="How to Make a WordPress Plugin Extensible" title="" />
                       <div class="mask"></div>
                     </a>
                   </div>
