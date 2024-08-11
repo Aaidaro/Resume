@@ -25,14 +25,14 @@
                     <div class="category">
                       <a href="#" title= "View all posts in {{post.tag}}">WordPress</a>
                     </div>
-                    <a href=#>
+                    <a href="{% url 'blog:single' pid=post.id%}">
                       <img src="{% static 'img/blog/blog_post_1.jpg' %}" alt="How to Make a WordPress Plugin Extensible" title="" />
                       <div class="mask"></div>
                     </a>
                   </div>
                   <div class="post-info">
                   <div class="post-date">{{post.published_date|date:"j M Y"}}</div>
-                    <a href="blog_single.html">
+                    <a href="">
                       <h4 class="blog-item-title">{{post.title}}</h4>
                     </a>
                     <div class="post-date">{{post.counted_view}} Views</div>
@@ -45,7 +45,6 @@
             <!-- <a class="btn btn-primary" href="#">See All Posts</a> -->
           </div>
         </div>
-
       </div>
     </div>
   </div>
