@@ -21,17 +21,29 @@
               <!-- Blog Post 1 -->
               <div class="item">
                 <div class="blog-card">
-                  <div class="category">
-                    <a href="#" title= "View all posts in {{post.tag}}">WordPress</a>
+                  <div class="media-block">
+                    <div class="category">
+                      {% for cat in post.category.all %}
+                        <a href="#" title= "View all posts in {{cat.name}}">{{cat.name}}</a>
+                      {% endfor %}
+                    </div>
+                    <a href="{% url 'blog:single' pid=post.id%}">
+                      <img src="{{post.image.url}}" alt="{{post.title}}"/>
+                      <div class="mask"></div>
+                    </a>
                   </div>
-                  <img src="{{post.image.url}}" alt="How to Make a WordPress Plugin Extensible" title="" />
-                  <div class="mask"></div>
                   <div class="post-info">
-                  <div class="post-date">{{post.published_date|date:"j M Y"}}</div>
-                  <div class="ci-text">
-                    <h4><a href="{% url 'blog:single' pid=post.id%}">{{post.title}}</a></h4>
-                  </div>
-                    <div class="post-date">{{post.counted_view}} Views</div>
+                    <div class="row">
+                      <div class="col-xs-12 col-sm-9">
+                        <a href="{% url 'blog:single' pid=post.id%}">
+                          <h4 class="blog-item-title">{{post.title}}</h4>
+                        </a>
+                        <div class="post-date">{{post.published_date|date:"j M Y"}}</div>
+                      </div>
+                      <div class="col-xs-12 col-sm-3">
+                        <div class="post-date">{{post.counted_view}} Views</div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
