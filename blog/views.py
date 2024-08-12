@@ -1,6 +1,5 @@
 from django.shortcuts import render, get_object_or_404
 from blog.models import Post
-from datetime import datetime
 
 def blog_main_view(request):
     published_posts = Post.get_published_posts()

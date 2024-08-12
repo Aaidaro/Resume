@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-from datetime import datetime
+from django.utils import timezone
 
 # Create your models here.
 class Post(models.Model):
@@ -23,13 +23,13 @@ class Post(models.Model):
         return f"{self.title}"
     
     def get_published_posts():
-        published_posts = Post.objects.filter(status= 1, published_date__lte= datetime.now())
+        published_posts = Post.objects.filter(status= 1, published_date__lte= timezone.now())
         return published_posts
     
     
     def get_next_id(self, current_object_id):
         next_post = Post.objects.filter(id__gt=current_object_id, status= 1,
-                    published_date__lte= datetime.now()).order_by('id').only('id').first()
+                    published_date__lte= timezone.now()).order_by('id').only('id').first()
         if next_post:
             return next_post
         else:
@@ -37,7 +37,7 @@ class Post(models.Model):
         
     def get_previous_id(self, current_object_id):
         previous_post = Post.objects.filter(id__lt=current_object_id, status= 1,
-                        published_date__lte= datetime.now()).order_by('-id').only('id').first()
+                        published_date__lte= timezone.now()).order_by('-id').only('id').first()
         if previous_post:
             return previous_post
         else:

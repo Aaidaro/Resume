@@ -43,7 +43,6 @@
                     <time class="entry-date" datetime="2020-04-04T08:29:37+00:00">{{post.published_date|date:"F d, Y"}}</time>
                   </a>
                 </span>
-
                 <span class="author vcard">
                   <a class="url fn n" href="#" rel="author">
                     <i class="fas fa-user"></i>
@@ -60,37 +59,57 @@
                 <a href="#" rel="tag">WordPress</a>
               </span>
             </div>
+
+            <div class="post-tags">
+              <span class="tags">
+                <b>{{post.counted_view}} Views</b>
+              </span>
+            </div>
+
             <div class="row">
-              <div class=" col-xs-12 col-sm-2 ">
+              <div class=" col-xs-12 col-sm-4 ">
                 {% if previous_post %}
-                <div class="entry-meta entry-meta-bottom">
-                  <span class="entry-date">
-                    <b><i class="fa-solid fa-chevron-left"></i>Previous Post</b>
-                  </span>
-                  <span class="author vcard">
-                    <a class="url fn n" href="{% url 'blog:single' pid=previous_post.id%}" rel="author">
-                      <span>{{previous_post.title}}</span>
-                    </a>
-                  </span>
-                  <p></p>
-                </div>
+                <a href="{% url 'blog:single' pid=previous_post.id %}">
+                  <div class="certificate-item clearfix">
+                    <div class="certi-content">
+                      <div class="certi-title">
+                        <p><i class="fa-solid fa-chevron-left"></i>Previous Post</p>
+                      </div>
+                      <div class="certi-id">
+                        <h5><span>{{previous_post.title}}</span></h5>
+                      </div>
+                      <div class="certi-date">
+                        <span>{{previous_post.counted_view}} Views</span>
+                      </div>
+                    </div>
+                    <div class="certi-logo">
+                      <img src="{{previous_post.image.url}}" alt="{{previous_post.title}}">
+                    </div>
+                  </div>
+                </a>
                 {% endif %}
               </div>
-              <div class=" col-xs-12 col-sm-8 ">
-              </div>
-              <div class=" col-xs-12 col-sm-2 ">
+              <div class=" col-xs-12 col-sm-4 "></div>
+              <div class=" col-xs-12 col-sm-4 ">
                 {% if next_post %}
-                <div class="entry-meta entry-meta-bottom">
-                  <span class="entry-date">
-                    <b>Next Post <i class="fa-solid fa-chevron-right"></i></b>
-                  </span>
-                  <span class="author vcard">
-                    <a class="url fn n" href="{% url 'blog:single' pid=next_post.id%}" rel="author">
-                      <span>{{next_post.title}}</span>
-                    </a>
-                  </span>
-                  <p></p>
-                </div>
+                <a href="{% url 'blog:single' pid=next_post.id%}">
+                  <div class="certificate-item clearfix">
+                    <div class="certi-logo">
+                      <img src="{{next_post.image.url}}" alt="{{next_post.title}}">
+                    </div>
+                    <div class="certi-content">
+                      <div class="certi-title">
+                        <p>Next Post<i class="fa-solid fa-chevron-right"></i></p>
+                      </div>
+                      <div class="certi-id">
+                        <h5><span>{{next_post.title}}</span></h5>
+                      </div>
+                      <div class="certi-date">
+                        <span>{{next_post.counted_view}} Views</span>
+                      </div>
+                    </div>
+                  </div>
+                </a>
                 {% endif %}
               </div>
             </div>
