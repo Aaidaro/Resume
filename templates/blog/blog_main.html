@@ -38,19 +38,23 @@
                         <a href="{% url 'blog:single' pid=post.id%}">
                           <h4 class="blog-item-title">{{post.title}}</h4>
                         </a>
-                        <div class="post-date">{{post.published_date|date:"j M Y"}}</div>
                       </div>
                       <div class="col-xs-12 col-sm-3">
-                        <div class="post-date">{{post.counted_view}} Views</div>
+                        <div class="post-date">
+                          <b>{{post.counted_view}} Views</b>
+                        </div>
                       </div>
                     </div>
+                    <p></p>
+                    <p style="text-align:justify;">{{post.content|truncatewords:20}}...</p>
+                    <div class="post-date">{{post.published_date|date:"j M Y"}}</div>
                   </div>
                 </div>
               </div>
               <!-- End of Blog Post 1 -->
               {% endfor %}
             </div>
-            <!-- <a class="btn btn-primary" href="#">See All Posts</a> -->
+            <a class="btn btn-primary" href="#">See All Posts</a>
           </div>
         </div>
       </div>

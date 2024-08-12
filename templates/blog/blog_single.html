@@ -15,7 +15,9 @@
         <article class="post">
           <header class="entry-header">
             <div class="entry-meta entry-meta-top">
-              <span><a href="#" rel="category tag">WordPress</a></span>      
+              {% for cat in post.category.all %}
+              <span><a href="#" rel="category tag" title="View all posts in {{cat.name}}">{{cat.name}}</a></span>      
+              {% endfor %}
             </div><!-- .entry-meta -->
 
             <h2 class="entry-title">{{post.title}}</h2>
