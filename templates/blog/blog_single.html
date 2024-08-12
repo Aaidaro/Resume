@@ -62,33 +62,36 @@
             </div>
             <div class="row">
               <div class=" col-xs-12 col-sm-2 ">
+                {% if previous_post %}
                 <div class="entry-meta entry-meta-bottom">
                   <span class="entry-date">
                     <b><i class="fa-solid fa-chevron-left"></i>Previous Post</b>
                   </span>
                   <span class="author vcard">
-                    <a class="url fn n" href="#" rel="author">
-                      <span>Previous post title</span>
+                    <a class="url fn n" href="{% url 'blog:single' pid=previous_post.id%}" rel="author">
+                      <span>{{previous_post.title}}</span>
                     </a>
                   </span>
                   <p></p>
                 </div>
+                {% endif %}
               </div>
               <div class=" col-xs-12 col-sm-8 ">
-
               </div>
               <div class=" col-xs-12 col-sm-2 ">
+                {% if next_post %}
                 <div class="entry-meta entry-meta-bottom">
                   <span class="entry-date">
                     <b>Next Post <i class="fa-solid fa-chevron-right"></i></b>
                   </span>
                   <span class="author vcard">
-                    <a class="url fn n" href="#" rel="author">
-                      <span>Next post title</span>
+                    <a class="url fn n" href="{% url 'blog:single' pid=next_post.id%}" rel="author">
+                      <span>{{next_post.title}}</span>
                     </a>
                   </span>
                   <p></p>
                 </div>
+                {% endif %}
               </div>
             </div>
           </div>
