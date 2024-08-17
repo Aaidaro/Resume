@@ -12,11 +12,9 @@
       </div>
 
       <div id="content" class="page-content site-content single-post" role="main">
-
         <div class="row">
-          <div class=" col-xs-12 col-sm-12 ">
-            
-            <div class="blog-masonry three-columns clearfix">
+          <div class=" col-xs-12 col-sm-8">
+            <div class="blog-masonry two-columns clearfix">
               {% for post in published_posts %}
               <!-- Blog Post 1 -->
               <div class="item">
@@ -46,7 +44,7 @@
                       </div>
                     </div>
                     <p></p>
-                    <p style="text-align:justify;">{{post.content|truncatewords:20}}...</p>
+                    <p style="text-align:justify;">{{post.content|truncatechars:150}}</p>
                     <div class="post-date">{{post.published_date|date:"j M Y"}}</div>
                   </div>
                 </div>
@@ -55,6 +53,43 @@
               {% endfor %}
             </div>
             <a class="btn btn-primary" href="#">See All Posts</a>
+          </div>
+          <div class=" col-xs-12 col-sm-4">
+            <div class="item">
+              <div class="block-title">
+                <h2>Popular Posts</h2>
+              </div>
+              <div class="row">
+                <div class=" col-xs-12 col-sm-12 ">
+                  <div id="timeline_1" class="timeline clearfix">
+                    <div class="timeline-item clearfix">
+                      {% for post in published_posts %}
+                      <div>
+                        <div class="row">
+                          <div class=" col-xs-12 col-sm-7">
+                            <a href="{% url 'blog:single' pid=post.id%}">
+                              <h6>{{post.title}} </h6>
+                            </a>
+                          </div>
+                          <div class=" col-xs-12 col-sm-5">
+                            <div class="ci-text">
+                              <div class="media-block">
+                                <a href="{% url 'blog:single' pid=post.id%}">
+                                  <img src="{{post.image.url}}" alt="{{post.title}}" max-width="5px"/>
+                                  <div class="mask"></div>
+                                  <p></p>
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      {% endfor %}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
